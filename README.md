@@ -1,6 +1,9 @@
 # Computer Graphics Repo
 
- Tasks:
+
+
+
+#Tasks:
 - [ ] Create model
 - [ ] Create textures
 - [ ] Create shader
