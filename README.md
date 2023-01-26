@@ -3,7 +3,7 @@
 
 
 
-#Tasks:
+# Tasks:
 - [ ] Create model
 - [ ] Create textures
 - [ ] Create shader
