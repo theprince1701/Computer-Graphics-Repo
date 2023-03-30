@@ -26,5 +26,10 @@ Lastly, the shader gives the object a texture in the surf function and sets the 
 
 
 
-This code is for a post processing effect that applies a downsampling filter to a RenderTexture source and then performs blur using an iterative process.
+This code is for a post processing effect that applies a downsampling filter to a RenderTexture source and then performs blur using an iterative process. The downsampling works by looping through a pre-defined iteration amount (more iterations means more downsampling/blur). 
 
+Inside the loop, the script divides the screen height, and width to downsample the resolution of the current image of the screen. Next, the script will check if the screen height is now <= 2 because the height of most displays are usually smaller than the weight.
+
+After the downsampling is finished, the script begins looping through the stored array RenderTextures set when we did the iteration looping, from the second last element to the first. Graphics.Blit is now used to copy the source to the destination.
+
+Finally the script then uses Graphics.Blit to copy the source to the destination to create the final image being rendered onto the screen.
