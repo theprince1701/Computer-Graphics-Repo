@@ -33,3 +33,19 @@ Inside the loop, the script divides the screen height, and width to downsample t
 After the downsampling is finished, the script begins looping through the stored array RenderTextures set when we did the iteration looping, from the second last element to the first. Graphics.Blit is now used to copy the source to the destination.
 
 Finally the script then uses Graphics.Blit to copy the source to the destination to create the final image being rendered onto the screen.
+
+# Explaining The Water Shader
+
+![d19eb848c5ad01fad666f313eba87a48](https://user-images.githubusercontent.com/96841021/228719266-aad7e537-f75a-42aa-ba3b-dc3e0bd03b8f.png)
+
+
+The water shader works by scrolling two normal maps in the opposite direction to give the illusion of moving waves.
+
+First, the shader defines two normal maps, and scrolling directions (x, y) for the two wave settings.
+
+The shader then makes variables for the each variable in the properties, and gets the UV'S in the Input struct. 
+
+In the surf function, it defines two uv coord (float2) for each of the normal variables, the uv coords are then scrolled by adding a direction multiplied by Time to move the uv coordinates over time in a given direction.
+
+Finally the shader then unpacks the normals, by the tex2D function with the specified normals, and sets the normal of the Output to the wave normals.
+
